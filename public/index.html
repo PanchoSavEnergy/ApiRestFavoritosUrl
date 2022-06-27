@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <!-- <p><a href="http://localhost:5001/home"></a></p> -->
+    <!--<meta http-equiv="Refresh" content="3; url=http://localhost:32/home"> -->
+    <!-- <h1>Holi mundos</h1>  {process.env.PATHHEROKU || 'http://localhost:32'}/auth/confirmar -->
+    <!-- <meta http-equiv="Refresh" content="3; url=http://localhost:32/home">   
+    
+        <div class="container mt-3">
+        {{#if modo === "production"}}
+            <meta http-equiv="Refresh" content="3; url=`${modo}/home`">
+        {{else}}
+            <meta http-equiv="Refresh" content="3; url='http://localhost:32/home'">
+        {{/if}} 
+    </div>
+    -->
+
+    <script>
+        const path = "";
+
+        function dondeIr(){
+            if(process.env.MODO === "production"){
+                path = process.env.PATHHEROKU + "/home";
+            } else {
+                path = "http://localhost:32/home";
+            }        
+            document.write(path);
+        }
+    </script>
+    <meta http-equiv="Refresh" content="1; url='/home'">
+    <!-- <meta http-equiv="Refresh" content="3; url=<p><script>dondeIr()</script></p>">  -->
+    
+</body>
+</html>

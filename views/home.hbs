@@ -1,0 +1,10 @@
+
+<h1>Agregue sus urls</h1>
+
+{{> Form}}
+
+{{#each urls }}
+    {{> Card item=this}}        <!-- Esto es la comunicación entre la clase Card.hbs y este archivo home.hbs -->
+{{/each}}
+
+
